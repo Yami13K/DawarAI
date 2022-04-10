@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 const TextStyle kHeading = TextStyle(
   fontSize: 60,
   fontWeight: FontWeight.bold,
-  color: Colors.white,
+  color: Colors.white70                                            ,
 );
 
 const TextStyle kBodyText = TextStyle(

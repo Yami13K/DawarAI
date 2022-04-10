@@ -1,7 +1,10 @@
 import 'package:dawar_smart/pallete.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Widgets/widgets.dart';
-
 class signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,31 +17,34 @@ class signin extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: 150,
+                  height: 175,
                   child: const Center(
                     child: Text("DawarAI", style: kHeading),
                   ),
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 175,
                 ),
                 Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.amber.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: const TextField(
-                          decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Email',
-                        hintStyle: kBodyText,
-                      )),
-                    )
-                  ],
-                ))
+                      children: const [
+                        TextInput(
+                          icon: FontAwesomeIcons.solidEnvelope,
+                          hint: 'Email',
+                          inputType: TextInputType.emailAddress,
+                          inputAction: TextInputAction.next,
+                          g: true,
+                        ),
+                        TextInput(
+                          icon: FontAwesomeIcons.lock,
+                          hint: 'Password',
+                          inputType: TextInputType.visiblePassword,
+                          inputAction: TextInputAction.done,
+                          g: false,
+                        ),
+                      ],
+                    ))
               ],
             ),
           ),
@@ -47,3 +53,5 @@ class signin extends StatelessWidget {
     );
   }
 }
+
+
