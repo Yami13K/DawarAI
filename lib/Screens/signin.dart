@@ -1,10 +1,13 @@
-import 'package:dawar_smart/pallete.dart';
+import 'package:dawar_smart/Screens/zscreens.dart';
+import 'package:dawar_smart/palette.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Widgets/widgets.dart';
+import 'insert_page.dart';
+
 class signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,39 +16,98 @@ class signin extends StatelessWidget {
         bg_image(),
         Scaffold(
           backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  height: 175,
-                  child: const Center(
-                    child: Text("DawarAI", style: kHeading),
+          body: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Container(
+                    height: 175,
+                    child: const Center(
+                      child: Text("DawarAI", style: kHeading),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 175,
-                ),
-                Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: Column(
-                      children: const [
-                        TextInput(
-                          icon: FontAwesomeIcons.solidEnvelope,
-                          hint: 'Email',
-                          inputType: TextInputType.emailAddress,
-                          inputAction: TextInputAction.next,
-                          g: true,
-                        ),
-                        TextInput(
-                          icon: FontAwesomeIcons.lock,
-                          hint: 'Password',
-                          inputType: TextInputType.visiblePassword,
-                          inputAction: TextInputAction.done,
-                          g: false,
-                        ),
-                      ],
-                    ))
-              ],
+                  const SizedBox(
+                    height: 175,
+                  ),
+                  Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Column(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children:  const [
+                              login_input(
+                                icon: FontAwesomeIcons.solidEnvelope,
+                                hint: 'Email',
+                                inputType: TextInputType.emailAddress,
+                                inputAction: TextInputAction.next,
+                                g: true,
+                              ),
+                              login_input(
+                                icon: FontAwesomeIcons.lock,
+                                hint: 'Password',
+                                inputType: TextInputType.visiblePassword,
+                                inputAction: TextInputAction.done,
+                                g: false,
+                              ),
+
+
+                              InkWell(
+                                  child: Text(
+                                'Forgot Password?',
+                                style: kBodyText,
+                              ),
+
+                                //Redirect future Widget
+                              /*onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => insert_page()),);
+                              },*/),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              const SizedBox(
+                                height: 100,
+                              ),
+                              round_button(
+                                S: 'login',
+                                W: insert_page(),
+                              ),
+                              const SizedBox(
+                                height: 80,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom: BorderSide(
+                                              color: Colors.white, width: 1))),
+                                  child: const Text(
+                                    'CreateNewAccount',
+                                    style: kBodyText,
+                                  ),
+                                ),
+
+
+
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => create_account()),
+                                  );
+                                },
+
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              )
+                            ],
+                          )
+                        ],
+                      ))
+                ],
+              ),
             ),
           ),
         ),
@@ -53,5 +115,3 @@ class signin extends StatelessWidget {
     );
   }
 }
-
-

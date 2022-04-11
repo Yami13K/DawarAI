@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../pallete.dart';
+import '../palette.dart';
 
-class TextInput extends StatelessWidget {
-  const TextInput({
+class login_input extends StatelessWidget {
+  const login_input({
     Key? key,
     required this.icon,
     required this.hint,
@@ -44,12 +44,10 @@ class TextInput extends StatelessWidget {
             style: kBodyText,
             keyboardType: inputType,
             textInputAction: inputAction,
-
           ),
         ),
       );
-    }
-    else {
+    } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0),
         child: Container(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:dawar_smart/Screens/signin.dart';
+import 'package:dawar_smart/Screens/zscreens.dart';
 
 void main() {
   runApp(const MyApp());

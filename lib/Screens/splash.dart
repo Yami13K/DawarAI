@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Splash extends StatefulWidget {
+class splash extends StatefulWidget {
   @override
   State<StatefulWidget> createState()=> InitState();
 }
 
-class InitState extends State<Splash>{
+class InitState extends State<splash>{
   @override
   Widget build(BuildContext context) {
     return initwidget();
