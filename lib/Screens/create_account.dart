@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Widgets/widgets.dart';
 import 'insert_page.dart';
+import 'live_location.dart';
 
 class create_account extends StatelessWidget {
   @override
@@ -69,7 +70,7 @@ class create_account extends StatelessWidget {
                                   ),
                                   round_button(
                                     S: 'Register',
-                                    W: insert_page(),
+                                    W: live_location(),
                                   ),
                                 ],
                               )

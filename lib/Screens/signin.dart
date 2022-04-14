@@ -1,3 +1,4 @@
+import 'package:dawar_smart/Screens/mobility_features.dart';
 import 'package:dawar_smart/Screens/zscreens.dart';
 import 'package:dawar_smart/palette.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,33 +36,35 @@ class signin extends StatelessWidget {
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children:  const [
-                              login_input(
+                            children:  [
+                              const login_input(
                                 icon: FontAwesomeIcons.solidEnvelope,
                                 hint: 'Email',
                                 inputType: TextInputType.emailAddress,
                                 inputAction: TextInputAction.next,
                                 g: true,
                               ),
-                              login_input(
+                              const login_input(
                                 icon: FontAwesomeIcons.lock,
                                 hint: 'Password',
                                 inputType: TextInputType.visiblePassword,
                                 inputAction: TextInputAction.done,
                                 g: false,
                               ),
-
-
                               InkWell(
-                                  child: Text(
-                                'Forgot Password?',
-                                style: kBodyText,
+                                child: const Text(
+                                  'Forgot Password?',
+                                  style: kBodyText,
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            mobility_features()),
+                                  );
+                                },
                               ),
-
-                                //Redirect future Widget
-                              /*onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => insert_page()),);
-                              },*/),
                             ],
                           ),
                           Column(
@@ -71,7 +74,7 @@ class signin extends StatelessWidget {
                               ),
                               round_button(
                                 S: 'login',
-                                W: insert_page(),
+                                W: live_location(),
                               ),
                               const SizedBox(
                                 height: 80,
@@ -87,9 +90,6 @@ class signin extends StatelessWidget {
                                     style: kBodyText,
                                   ),
                                 ),
-
-
-
                                 onTap: () {
                                   Navigator.push(
                                     context,
@@ -97,11 +97,14 @@ class signin extends StatelessWidget {
                                         builder: (context) => create_account()),
                                   );
                                 },
-
                               ),
                               const SizedBox(
                                 height: 30,
-                              )
+                              ),
+                              const SizedBox(
+                                height: 50,
+                                width: 100,
+                              ),
                             ],
                           )
                         ],

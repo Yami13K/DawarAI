@@ -36,7 +36,7 @@ class login_input extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Icon(
                     icon,
-                    color: Colors.blue,
+                    color: Colors.teal,
                     size: 25,
                   )),
               hintStyle: kBodyText,
@@ -63,7 +63,7 @@ class login_input extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Icon(
                     icon,
-                    color: Colors.blue,
+                    color: Colors.teal,
                     size: 25,
                   )),
               hintStyle: kBodyText,
