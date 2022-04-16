@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+
 Widget dtoWidget(LocationDto? dto) {
   if (dto == null) {
     print('gg');

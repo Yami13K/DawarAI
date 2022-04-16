@@ -1,59 +1,44 @@
 import 'package:flutter/material.dart';
 
 class insert_page extends StatelessWidget {
+  const insert_page({Key? key}) : super(key: key);
+
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    TextStyle? textStyle = Theme.of(context).textTheme.headline1;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
-      ),
-      body: Padding(
-          padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
-          child: ListView(children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-              child: TextField(
-//controller: titleController,
-                style: textStyle,
-                onChanged: (value) {
-                  debugPrint('Something changed in Title Text Field');
-//updateTitle();
-                },
-                decoration: InputDecoration(
-                    labelText: 'Title',
-                    labelStyle: textStyle,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0))),
+      backgroundColor: Colors.teal,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.3,
+              right: 0,
+              left: 0,
+              child: const Image(image: AssetImage('assets/images/dawar.png')),
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.3,
+              right: 1,
+              left: 0,
+              child: const Image(
+                  image: AssetImage('assets/images/people1.png'),
+                  fit: BoxFit.cover),
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.39,
+              right: 0,
+              left: 4,
+              child: const Image(
+                image: AssetImage('assets/images/car1.png'),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: RaisedButton(
-                      color: Theme.of(context).primaryColorDark,
-                      textColor: Theme.of(context).primaryColorLight,
-                      child: Text(
-                        'Save',
-                        textScaleFactor: 1.5,
-                      ),
-                      onPressed: () {
-                        debugPrint("Save button clicked");
-//_save(context);
-//_showAlertDialog("ok","ok",context);
-                      },
-                    ),
-                  ),
-                  Container(
-                    width: 5.0,
-                  ),
-                ],
-              ),
-            )
-          ])),
+          ],
+        ),
+      ),
     );
   }
 }

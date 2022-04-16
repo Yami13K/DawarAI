@@ -18,7 +18,8 @@ String dtoToString(LocationDto dto) =>
 
 
 
-class _live_locationState extends State<live_location> {
+class _live_locationState extends State<live_location>
+{
   String logStr = '';
   LocationDto? lastLocation;
   DateTime? lastTimeLocation;
@@ -38,9 +39,6 @@ class _live_locationState extends State<live_location> {
 
     _status = LocationStatus.INITIALIZED;
   }
-
-  void getCurrentLocation() async =>
-      onData(await LocationManager().getCurrentLocation());
 
   void onData(LocationDto dto) {
     // print(dtoToString(dto));
@@ -100,14 +98,6 @@ class _live_locationState extends State<live_location> {
             ? dtoToString(lastLocation!)
             : 'Unknown last location',
         textAlign: TextAlign.center,
-      );
-
-  Widget currentLocationButton() => SizedBox(
-        width: double.maxFinite,
-        child: ElevatedButton(
-          child: const Text('CURRENT LOCATION'),
-          onPressed: getCurrentLocation,
-        ),
       );
 
   @override

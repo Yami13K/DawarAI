@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
    <application
-        android:label="dawar_smart"
+        android:label="DawarAI"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
