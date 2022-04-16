@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../palette.dart';
 
 class round_button extends StatelessWidget {
-  round_button({
-    Key? key, required this.S,  required this.W,
+  const round_button({
+    Key? key, required this.S,  this.W,
   }) : super(key: key);
 
   final String S;
-  Widget W;
+  final Widget? W;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class round_button extends StatelessWidget {
       ),
       child: FlatButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => W),);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => W!),);
           },
           child:  Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),

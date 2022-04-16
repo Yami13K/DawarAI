@@ -14,25 +14,21 @@ class signup_input extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Container(
-        decoration: BoxDecoration(
-        ),
-        child: Column(
-          children: [
-            TextField(
-              style: bBodyText,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 1)),
-                labelText: hint,
+      child: Column(
+        children: [
+          TextField(
+            style: bBodyText,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 1)),
+              labelText: hint,
 
-
-              ),
 
             ),
 
-          ],
-        ),
+          ),
+
+        ],
       ),
     );
   }
