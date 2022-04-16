@@ -1,8 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dawar_smart/Screens/zscreens.dart';
 import 'package:dawar_smart/Screens/mobility_features.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: signin(),
+      home: number_in(),
     );
   }
 }
