@@ -8,6 +8,7 @@ class splash extends StatefulWidget {
   _SplashState createState() => _SplashState();
 
 }
+
 class _SplashState extends State<splash> with TickerProviderStateMixin {
   int _counter = 0;
   late AnimationController _animationController;
@@ -29,13 +30,12 @@ class _SplashState extends State<splash> with TickerProviderStateMixin {
     _animate();
 
     _animation.addStatusListener((status) {
-      if(status == AnimationStatus.completed) {
-        _animationController.reverse();
+      if (status == AnimationStatus.completed) {
+        _animationController.repeat();
       }
-
     });
-
   }
+
   _navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 5000), () {});
     Navigator.pushReplacement(
@@ -45,31 +45,52 @@ class _SplashState extends State<splash> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              color: Color( 0xff1b726c),
-              child: Column(
-                children: [
-                  Container(
-                  child: Image.asset('assets/images/l.png'),
-                  ),
-                  RotationTransition(
-                    turns: _animation,
-                    child: Container(
-                      child: Image.asset('assets/images/l1.png'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        )
-    );
+      backgroundColor: Colors.teal,
+      body: SizedBox(
+        width: MediaQuery
+            .of(context)
+            .size
+            .width,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height,
+        child: Stack(
+            alignment: Alignment.center,
+            children: [
+        Positioned(
+        top: MediaQuery.of(context).size.height * 0.35,
+        right: 0,
+        left: 0,
+        child: const Image(image: AssetImage('assets/images/dawar.png')),
+      ),
+      RotationTransition(
+        turns: _animation,
+      child: Positioned(
+        top: MediaQuery
+            .of(context)
+            .size
+            .height * 0.2,
+        right: 1,
+        left: 0,
+        child: const Image(
+            image: AssetImage('assets/images/people1.png'),
+            fit: BoxFit.cover),
+      ),),
+      Positioned(
+        top: MediaQuery
+            .of(context)
+            .size
+            .height * 0.444,
+        right: 0,
+        left: 4,
+        child: const Image(
+          image: AssetImage('assets/images/car1.png'),
+        ),
+      )
+        ],
+      ),
+    ),);
   }
 }
+

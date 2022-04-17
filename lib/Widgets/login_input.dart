@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../Screens/Number_auth.dart';
 import '../palette.dart';
+
 
 class login_input extends StatelessWidget {
   const login_input({
@@ -21,10 +23,13 @@ class login_input extends StatelessWidget {
   final bool g;
   final bool? border;
   final Widget? w;
+  onPressed (context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => w!),);
+  }
 
   @override
   Widget build(BuildContext context) {
-    if (!border! || border == null) {
+    if (border == false || border == null) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0),
         child: Container(
@@ -65,6 +70,7 @@ class login_input extends StatelessWidget {
           keyboardType: inputType,
           textInputAction: inputAction,
           obscureText: !g,
+          onFieldSubmitted: (_)=>onPressed(context) ,
 
         ),
       );

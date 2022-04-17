@@ -7,6 +7,8 @@ import 'package:carp_background_location/carp_background_location.dart';
 import 'package:dawar_smart/Widgets/dto.dart';
 
 class live_location extends StatefulWidget {
+  const live_location({Key? key}) : super(key: key);
+
   @override
   _live_locationState createState() => _live_locationState();
 }
