@@ -39,7 +39,7 @@ class number_auth extends StatelessWidget {
             top: MediaQuery.of(context).size.height * 0.8,
             left: 0,
             right: 0,
-            child: round_button(
+            child: const round_button(
               S: 'login',
               W: live_location(),
             ),
