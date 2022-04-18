@@ -41,6 +41,8 @@ dependencies:
   permission_handler: ^9.0.2
   mobility_features: ^3.1.0
   animated_splash_screen:
+  pin_code_text_field: ^1.8.0
+
 
 
 

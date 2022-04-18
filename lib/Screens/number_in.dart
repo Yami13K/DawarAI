@@ -29,16 +29,16 @@ class number_in extends StatelessWidget {
               top: MediaQuery.of(context).size.height * 0.5,
               left: 0,
               right: 0,
-              child: const login_input(
+              child: const number_input(
                 border: true,
                 g: true,
                 inputAction: TextInputAction.done,
                 inputType:TextInputType.numberWithOptions(signed: true, decimal: true),
-                w:live_location(),
-              ))
+                w:number_auth(),
+              )
+          )
         ],
       ),
-
     );
   }
 }
