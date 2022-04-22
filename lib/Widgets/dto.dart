@@ -10,7 +10,7 @@ Widget dtoWidget(LocationDto? dto) {
   if (dto == null) {
     print('gg');
     return const Text(
-      "No location yet",
+      "Fuck",
       style: TextStyle(fontSize: 35),
     );
   } else {

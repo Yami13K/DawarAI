@@ -7,7 +7,10 @@
         {
             "name": "dawar_smart",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--no-sound-null-safety"
+            ]
         },
         {
             "name": "dawar_smart (profile mode)",

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:carp_background_location/carp_background_location.dart';
 import 'package:dawar_smart/Widgets/dto.dart';
@@ -110,9 +109,7 @@ class _live_locationState extends State<live_location>
     final widget = dtoWidget;
     return MaterialApp(
       theme: ThemeData(
-        textTheme:
-            GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
-        primarySwatch: Colors.teal,
+      primarySwatch: Colors.teal,
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
